@@ -66,13 +66,10 @@ Hochgeschwindigkeitskamera → Python-Verarbeitung → UDP-Übertragung → Unit
 
 ## Technische Details
 
-- **Unity-Version**: [Version einfügen]
-- **ML-Agents Version**: [Version einfügen]
+- **Unity-Version**: 2022.3.23f1
 - **Python-Abhängigkeiten**: OpenCV, Socket, NumPy
-- **Hardware-Anforderungen**: Hochgeschwindigkeitskamera, Schrittmotorsteuerung
 
 ## Bekannte Probleme und Lösungsansätze
 
-- Latenzprobleme bei der UDP-Übertragung
 - Genauigkeit der Ballverfolgung bei hohen Geschwindigkeiten
 - Übertragung von simulierten Bewegungen auf reale Motormechanik
