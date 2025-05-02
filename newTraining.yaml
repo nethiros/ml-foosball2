@@ -1,0 +1,30 @@
+behaviors:
+  My Behavior:
+    trainer_type: ppo  # PPO ist gut für kontinuierliche Steuerungsaufgaben  
+    hyperparameters:
+      batch_size: 4096  # Erhöht für stabileres Lernen (vorher 512)
+      buffer_size: 204800  # Erhöht für besseres Sampling (vorher 20480)
+      learning_rate: 0.0003  # Beibehalten, da identisch mit OpenAI
+      beta: 0.01  # Angepasst an OpenAI's Entropy-Koeffizient
+      epsilon: 0.2  # Beibehalten, identisch mit OpenAI's PPO Clipping
+      lambd: 0.95  # Beibehalten, da identisch mit OpenAI
+      num_epoch: 5  # Beibehalten
+      learning_rate_schedule: linear  # Beibehalten
+    network_settings:
+      normalize: true  # Wichtig für Eingabedaten-Normalisierung
+      hidden_units: 256  # Angepasst an OpenAI's MLP-Größe
+      num_layers: 3  # Beibehalten für komplexe Entscheidungsfindung
+      vis_encode_type: simple
+      memory:
+        sequence_length: 10  # BPTT Trunkierungslänge aus OpenAI's Paper
+        memory_size: 256  # LSTM-Größe aus OpenAI's Paper
+      normalize_inputs: true
+      normalize_layers: true  # Layer-Normalisierung hinzugefügt (wichtig laut OpenAI)
+    reward_signals:
+      extrinsic:
+        gamma: 0.998  # Erhöht für stärkere Gewichtung langfristiger Belohnungen (vorher 0.995)
+        strength: 1.0  
+    keep_checkpoints: 10  # Beibehalten
+    max_steps: 50000000  # Beibehalten
+    time_horizon: 160  # Angepasst an OpenAI's Max GAE Horizont-Länge
+    summary_freq: 30000  # Beibehalten

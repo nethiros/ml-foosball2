@@ -1,0 +1,1 @@
+mlagents-learn Tischkicker_V6/Curriculum.yaml --time-scale=1 --torch-device=cuda --run-id=2025XX
