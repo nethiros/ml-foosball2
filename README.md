@@ -10,7 +10,7 @@ Aktuell konzentriert sich die Implementierung auf die Steuerung des Torwarts. Di
 
 ## Projektstruktur
 
-### Assets/Environments/TorwarTraining/
+### Assets/Environments/TorwartTraining/
 Dieser Ordner enthält die Hauptimplementierung des Torwart-Agenten, einschließlich:
 - Trainingsumgebung
 - Agent-Skripte
