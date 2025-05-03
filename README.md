@@ -29,8 +29,6 @@ Dieser Ordner enthält unterstützende Skripte:
 ### Assets/ML-Agents/Onnx/
 Hier befindet sich die aktuelle ONNX-Datei des trainierten Torwart-Modells.
 
-## Trainingsmethodik
-
 ### Reinforcement Learning
 - **Algorithmus**: Proximal Policy Optimization (PPO)
 - **Lernansatz**: Curriculum Learning
@@ -46,23 +44,13 @@ Hier befindet sich die aktuelle ONNX-Datei des trainierten Torwart-Modells.
 
 ## Datenfluss
 
-Hochgeschwindigkeitskamera → Python-Verarbeitung → UDP-Übertragung → Unity-Umgebung → Agent-Entscheidung → Steuerungssignale
-
-### Ballverfolgung
-- Die Kamera erfasst Bilder des Spielfelds
-- Python-Skripte verarbeiten die Bilder zur Erkennung der Ballposition
-- Koordinaten werden über UDP an die Unity-Simulation übertragen
-
-### Steuerung
-- Der trainierte Agent trifft Entscheidungen basierend auf den Ballkoordinaten
-- Die Ausgaben werden für die Ansteuerung von Schrittmotoren optimiert
+Hochgeschwindigkeitskamera → Python-Verarbeitung → UDP-Übertragung → Unity-Umgebung → Agent-Entscheidung → Steuerungssignale an ESP-32 Skript
 
 ## Nächste Schritte
 
 1. Vervollständigung der Abwehrspieler-Implementierung
-2. Integration weiterer Spielerelemente (Stürmer)
-3. Optimierung des Modells für Echtzeitanforderungen
-4. Kalibrierung der Schnittstelle zwischen virtueller Umgebung und realer Hardware
+2. Integration weiterer Spielerelemente (Stürmer, Angriff, Mittelfeld)
+3. Verbesserung der generalisierung der KI, um Sim-To-Real Gap Probleme zu vermeiden
 
 ## Technische Details
 
@@ -72,4 +60,6 @@ Hochgeschwindigkeitskamera → Python-Verarbeitung → UDP-Übertragung → Unit
 ## Bekannte Probleme und Lösungsansätze
 
 - Genauigkeit der Ballverfolgung bei hohen Geschwindigkeiten
-- Übertragung von simulierten Bewegungen auf reale Motormechanik
+- Übertragung von simulierten Bewegungen auf reale Motormechanik sorgt für zittriges Spielerverhalten
+- Sim-To-Real Gap aktuell zu hoch. Realer Tischkicker erreicht nicht das gewünschte Spielverhalten
+- Teilweise hohe Latenzen in der Roundtriptime
