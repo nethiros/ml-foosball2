@@ -44,18 +44,18 @@ Hier befindet sich die aktuelle ONNX-Datei des trainierten Torwart-Modells.
 
 ## Datenfluss
 
-Hochgeschwindigkeitskamera → Python-Verarbeitung → UDP-Übertragung → Unity-Umgebung → Agent-Entscheidung → Steuerungssignale an ESP-32 Skript
+Hochgeschwindigkeitskamera → Baseler API-Übertragung → Python-Verarbeitung → UDP-Übertragung → Unity-Umgebung → Agent-Entscheidung → UART-Übertragung → Steuerungssignale an ESP-32 Skript
 
 ## Nächste Schritte
 
 1. Vervollständigung der Abwehrspieler-Implementierung
 2. Integration weiterer Spielerelemente (Stürmer, Angriff, Mittelfeld)
-3. Verbesserung der generalisierung der KI, um Sim-To-Real Gap Probleme zu vermeiden
+3. Verbesserung der Generalisierung der KI, um Sim-To-Real Gap Probleme zu vermeiden
 
 ## Technische Details
 
 - **Unity-Version**: 2022.3.23f1
-- **Python-Abhängigkeiten**: OpenCV, Socket, NumPy
+- **ML-Agents-Version**: 2.0.1
 
 ## Bekannte Probleme und Lösungsansätze
 
